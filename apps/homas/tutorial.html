@@ -1,461 +1,765 @@
-<!DOCTYPE html>
-
-<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>Homas - Manajemen Inventaris &amp; Logistik Rumah</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error-container":"#93000a","primary-container":"#008378","background":"#faf8ff","surface-container":"#eaedff","tertiary":"#006948","surface-bright":"#faf8ff","on-error":"#ffffff","on-tertiary":"#ffffff","on-tertiary-container":"#f5fff7","inverse-on-surface":"#eef0ff","tertiary-fixed-dim":"#68dba9","on-surface-variant":"#3d4947","on-secondary-container":"#00714d","outline-variant":"#bcc9c6","tertiary-container":"#00855d","error":"#ba1a1a","primary":"#00685f","surface-dim":"#d2d9f4","primary-fixed":"#89f5e7","on-primary-fixed-variant":"#005049","primary-fixed-dim":"#6bd8cb","error-container":"#ffdad6","on-primary-fixed":"#00201d","surface-tint":"#006a61","on-secondary-fixed-variant":"#005236","on-tertiary-fixed":"#002114","on-secondary":"#ffffff","on-tertiary-fixed-variant":"#005137","surface-container-low":"#f2f3ff","secondary-fixed-dim":"#4edea3","on-secondary-fixed":"#002113","on-surface":"#131b2e","on-primary":"#ffffff","surface":"#faf8ff","surface-container-high":"#e2e7ff","surface-container-highest":"#dae2fd","inverse-primary":"#6bd8cb","surface-variant":"#dae2fd","surface-container-lowest":"#ffffff","inverse-surface":"#283044","on-background":"#131b2e","secondary":"#006c49","outline":"#6d7a77","secondary-fixed":"#6ffbbe","secondary-container":"#6cf8bb","tertiary-fixed":"#85f8c4","on-primary-container":"#f4fffc"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"gutter-sm":"1rem","space-xl":"2.5rem","space-md":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-sm":"1rem","space-lg":"1.5rem","margin":"2rem","gutter":"1.5rem"},"fontFamily":{"body-lg":["Inter"],"headline-lg":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"body-md":["Inter"],"display-xl-mobile":["Plus Jakarta Sans"],"label-sm":["JetBrains Mono"],"label-md":["JetBrains Mono"],"display-xl":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"display-xl-mobile":["38px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"display-xl":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"800"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface border-r border-surface-container z-50 flex flex-col pt-5 pb-6"><div class="px-6 mb-8"><a class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface transition-colors mb-3" href="../../index.html"><span class="material-symbols-outlined text-[18px]">arrow_back</span><span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider">Karsa Studio</span></a><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-on-secondary shadow-sm"><span class="material-symbols-outlined text-[22px]">inventory_2</span></div><div><div class="font-title-md text-title-md font-bold text-on-surface leading-tight">Homas</div><div class="font-label-sm text-label-sm text-on-surface-variant">v2.4.0 • Local First</div></div></div></div><nav class="flex-1 px-4 space-y-1" data-active-classes="bg-surface-container text-on-surface font-title-md text-title-md rounded-xl"><a class="flex items-center gap-space-sm px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-title-md text-title-md" data-path="beranda-developer" href="../../index.html"><span class="material-symbols-outlined text-[20px]">domain</span>Beranda Developer</a><a class="flex items-center gap-space-sm px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-title-md text-title-md" data-path="homas-overview" href="./index.html"><span class="material-symbols-outlined text-[20px]">apps</span>Ringkasan App</a><a aria-current="page" class="flex items-center gap-space-sm px-3 py-2.5 transition-colors bg-surface-container text-on-surface font-title-md text-title-md rounded-xl" data-path="tutorial" href="./tutorial.html"><span class="material-symbols-outlined text-[20px]">menu_book</span>Tutorial</a><a class="flex items-center gap-space-sm px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-title-md text-title-md" data-path="privasi" href="./privacy-policy.html"><span class="material-symbols-outlined text-[20px]">lock</span>Privasi</a></nav><div class="px-4 pt-4 border-t border-surface-container"><div class="p-3 rounded-2xl bg-surface-container-low border border-surface-container flex flex-col gap-2"><div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm font-semibold"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>Offline Storage Active</div><p class="font-body-sm text-body-sm text-on-surface-variant">Data inventaris tersimpan aman di perangkat lokal Anda.</p></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-surface-container z-40 flex items-center justify-between px-8"><nav class="flex items-center gap-space-md" data-active-classes="bg-surface-container text-on-surface font-title-md text-title-md rounded-full px-3 py-1.5"><a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-title-md text-title-md px-3 py-1.5 rounded-full transition-colors" data-path="beranda-developer" href="../../index.html">Beranda Developer</a><a aria-current="page" class="transition-colors bg-surface-container text-on-surface font-title-md text-title-md rounded-full px-3 py-1.5" data-path="tutorial" href="./tutorial.html">Tutorial</a><a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-title-md text-title-md px-3 py-1.5 rounded-full transition-colors" data-path="privasi" href="./privacy-policy.html">Privasi</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center gap-space-xs px-4 py-2 rounded-full bg-secondary text-on-secondary font-title-md text-title-md hover:bg-tertiary transition-all shadow-sm" href="#download-section"><span class="material-symbols-outlined text-[18px]">download</span><span>Download</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
-<!-- Internal Sub-Navigation Bar -->
-<div class="w-full bg-surface-container-lowest/80 backdrop-blur-md px-8 py-3.5 flex items-center justify-between shadow-sm sticky top-16 z-30">
-<div class="flex items-center gap-space-md">
-<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
-<span>Homas</span>
-<span class="material-symbols-outlined text-[14px]">chevron_right</span>
-<span class="text-primary font-semibold">Panduan Penggunaan</span>
+<!DOCTYPE html><html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_dashboard" name="shell-type">
+<title>Tutorial &amp; Panduan Penggunaan Homas - Smart Home Inventory</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d9488",
+            "primary-dark": "#0f766e",
+            "secondary": "#059669",
+            "secondary-dark": "#047857",
+            "emerald-brand": "#10b981",
+            "surface-bg": "#f8fafc",
+            "surface-card": "#ffffff",
+            "surface-border": "#e2e8f0",
+            "on-surface": "#0f172a",
+            "on-surface-variant": "#475569",
+            "accent-teal": "#14b8a6",
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html { scroll-behavior: smooth; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-surface-bg font-sans text-on-surface antialiased selection:bg-emerald-100 selection:text-emerald-900">
+<!-- Header / Navigation Bar (Identik dengan Landing Page) -->
+<header class="fixed top-0 left-0 right-0 h-16 sm:h-20 bg-white/90 backdrop-blur-md border-b border-slate-200/80 z-50 transition-all">
+<div class="max-w-7xl mx-auto h-full px-6 lg:px-10 flex items-center justify-between">
+<a class="flex items-center gap-3 group" href="./index.html">
+<div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
 </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900">Homas</span>
+<span class="hidden sm:inline-block px-2 py-0.5 text-[11px] font-semibold tracking-wide bg-emerald-50 text-emerald-700 border border-emerald-200/60 rounded-full">v2.4</span>
 </div>
-<div class="flex items-center gap-space-sm">
-<a class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-title-md text-title-md transition-all" href="./index.html">
-<span class="material-symbols-outlined text-[16px]">arrow_back</span>
-<span>Kembali ke Beranda Homas</span>
+<span class="text-[10px] uppercase font-mono tracking-wider font-semibold text-slate-400 -mt-0.5">Smart Home Inventory</span>
+</div>
 </a>
-<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
-<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
-        Versi 2.4.0 Aktif
-      </span>
-</div>
-</div>
-<div class="max-w-7xl mx-auto w-full px-8 py-10 flex flex-col gap-space-xl">
-<!-- Header Section with Distinct Geometry -->
-<header class="relative rounded-2xl bg-surface-container-low p-8 md:p-12 overflow-hidden shadow-sm">
-<div class="absolute -right-16 -top-16 w-96 h-96 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
-<div class="relative z-10 max-w-3xl flex flex-col gap-space-sm">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-md text-label-md w-max shadow-sm">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
-<span>Panduan Terverifikasi • 100% Offline-First</span>
-</div>
-<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
-          Panduan Memulai Homas
-        </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-          Ikuti langkah mudah di bawah ini untuk mengatur inventaris rumah dan menghubungkan pencadangan otomatis ke Google Drive pribadi Anda tanpa perantara server luar.
-        </p>
-<div class="flex flex-wrap items-center gap-space-md pt-2">
-<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
-<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
-<span>Estimasi Setup: ~4 Menit</span>
-</div>
-<span class="text-surface-container-highest">•</span>
-<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
-<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
-<span>Enkripsi Penyimpanan Lokal</span>
-</div>
+<nav class="hidden md:flex items-center gap-6 lg:gap-7 text-sm font-medium text-slate-600">
+<a class="hover:text-emerald-700 transition-colors" href="./index.html">Beranda</a>
+<a class="hover:text-emerald-700 transition-colors" href="./index.html#sains-rumus">Sains &amp; Rumus</a>
+<a class="hover:text-emerald-700 transition-colors" href="./index.html#fitur">Fitur Lengkap</a>
+<a class="hover:text-emerald-700 transition-colors" href="./index.html#alur-kerja">Alur Kerja</a>
+<a class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200/60" href="./tutorial.html">Tutorial</a>
+<a class="hover:text-emerald-700 transition-colors" href="./privacy-policy.html">Privasi</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm shadow-md shadow-emerald-600/25 hover:shadow-emerald-600/35 hover:-translate-y-0.5 transition-all" href="#download">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M3.609 1.814L13.793 12 3.61 22.186a1.99 1.99 0 0 1-.61-1.436V3.25c0-.555.226-1.059.609-1.436zm11.603 11.604l2.585-2.586a1.994 1.994 0 0 0 0-2.828l-2.585-2.586L12.38 8.25l2.832 5.168zm-2.029-2.036L4.398.995A1.995 1.995 0 0 1 5.438.718c.553 0 1.056.226 1.434.604l6.311 11.06zm0 1.236L6.872 22.678c-.378.378-.881.604-1.434.604a1.995 1.995 0 0 1-1.04-.277l8.785-10.387z"></path>
+</svg>
+<span class="hidden sm:inline">Unduh di Google Play</span>
+<span class="sm:hidden">Unduh</span>
+</a>
 </div>
 </div>
 </header>
-<!-- Multi-Column Layout (Sidebar + Main Steps) -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-<!-- Left Column: Sticky Tutorial Navigator -->
-<aside class="lg:col-span-4 sticky top-36 flex flex-col gap-space-md">
-<div class="rounded-2xl bg-surface-container-lowest p-5 shadow-sm flex flex-col gap-space-sm">
-<div class="flex items-center justify-between pb-3">
-<h2 class="font-title-md text-title-md font-bold text-on-surface">Daftar Materi Panduan</h2>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">6 Bab</span>
+<main class="relative pt-20 overflow-hidden">
+<!-- HERO TUTORIAL SECTION -->
+<section class="relative pt-12 pb-16 px-6 lg:px-12 bg-gradient-to-b from-emerald-50/50 via-white to-slate-50 border-b border-slate-200/70">
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[720px] h-[320px] bg-emerald-300/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="max-w-5xl mx-auto flex flex-col items-center text-center gap-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-800 shadow-xs">
+<span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
+<span class="font-mono uppercase tracking-wider text-[11px] font-bold text-emerald-700">PANDUAN &amp; DOKUMENTASI RESMI • HOMAS v2.4</span>
+<span class="text-slate-300">|</span>
+<span class="text-slate-600 font-normal">100% Offline-First SQLite</span>
+</div>
+<h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+          Panduan Lengkap &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500">Alur Kerja Homas</span>
+</h1>
+<p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+          Pelajari cara memanfaatkan basis data lokal SQLite terenkripsi, input 3 langkah berkecepatan tinggi, formula kalkulasi deterministik, serta manajemen inventaris spasial tanpa ketergantungan server luar.
+        </p>
+<div class="w-full pt-4 overflow-x-auto pb-2 scrollbar-none">
+<div class="flex items-center justify-start lg:justify-center gap-2 min-w-max px-2">
+<a class="px-3.5 py-1.5 rounded-full bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 hover:text-emerald-700 transition-all shadow-xs" href="#langkah-1">
+              1. Setup Tanpa Akun
+            </a>
+<a class="px-3.5 py-1.5 rounded-full bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 hover:text-emerald-700 transition-all shadow-xs" href="#langkah-2">
+              2. Input 3 Langkah &amp; 616 Master
+            </a>
+<a class="px-3.5 py-1.5 rounded-full bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 hover:text-emerald-700 transition-all shadow-xs" href="#langkah-3">
+              3. Takaran &amp; Rumus Prediksi
+            </a>
+<a class="px-3.5 py-1.5 rounded-full bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 hover:text-emerald-700 transition-all shadow-xs" href="#langkah-4">
+              4. Inventaris Spasial
+            </a>
+<a class="px-3.5 py-1.5 rounded-full bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 hover:text-emerald-700 transition-all shadow-xs" href="#langkah-5">
+              5. Quick Action 1 Ketukan
+            </a>
+<a class="px-3.5 py-1.5 rounded-full bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 hover:text-emerald-700 transition-all shadow-xs" href="#langkah-6">
+              6. Token PLN &amp; Tagihan
+            </a>
+<a class="px-3.5 py-1.5 rounded-full bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 hover:text-emerald-700 transition-all shadow-xs" href="#langkah-7">
+              7. Keuangan &amp; Audit Trail
+            </a>
+<a class="px-3.5 py-1.5 rounded-full bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-xs sm:text-sm font-medium text-slate-700 hover:text-emerald-700 transition-all shadow-xs" href="#langkah-8">
+              8. Ekspor &amp; FAQ
+            </a>
 </div>
-<nav class="flex flex-col gap-1.5" id="tutorial-nav">
-<a class="flex items-center justify-between px-3.5 py-3 rounded-xl bg-surface-container text-on-surface font-title-md text-title-md transition-all group" href="#langkah-1">
-<span class="flex items-center gap-2.5 truncate">
-<span class="w-6 h-6 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center shrink-0">1</span>
-<span class="truncate font-semibold">1. Memulai &amp; Hubungkan Google</span>
-</span>
-<span class="material-symbols-outlined text-primary text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
-</a>
-<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-md text-title-md transition-all group" href="#langkah-2">
-<span class="flex items-center gap-2.5 truncate">
-<span class="w-6 h-6 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center shrink-0">2</span>
-<span class="truncate">2. Input &amp; Pencatatan Stok</span>
-</span>
-<span class="material-symbols-outlined text-on-surface-variant text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
-</a>
-<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-md text-title-md transition-all group" href="#langkah-3">
-<span class="flex items-center gap-2.5 truncate">
-<span class="w-6 h-6 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center shrink-0">3</span>
-<span class="truncate">3. Membuat Barang Baru</span>
-</span>
-<span class="material-symbols-outlined text-on-surface-variant text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
-</a>
-<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-md text-title-md transition-all group" href="#langkah-3">
-<span class="flex items-center gap-2.5 truncate">
-<span class="w-6 h-6 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center shrink-0">4</span>
-<span class="truncate">4. Membuat Ruangan / Lokasi</span>
-</span>
-<span class="material-symbols-outlined text-on-surface-variant text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
-</a>
-<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-md text-title-md transition-all group" href="#langkah-4">
-<span class="flex items-center gap-2.5 truncate">
-<span class="w-6 h-6 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center shrink-0">5</span>
-<span class="truncate">5. Kelola Tagihan Rutin</span>
-</span>
-<span class="material-symbols-outlined text-on-surface-variant text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
-</a>
-<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-md text-title-md transition-all group" href="#faq">
-<span class="flex items-center gap-2.5 truncate">
-<span class="w-6 h-6 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center shrink-0">6</span>
-<span class="truncate">6. Lain-lain &amp; FAQ</span>
-</span>
-<span class="material-symbols-outlined text-on-surface-variant text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
-</a>
-</nav>
-</div>
-<!-- Quick Status Card -->
-<div class="rounded-2xl bg-secondary-container/30 p-5 shadow-sm flex flex-col gap-space-xs">
-<div class="flex items-center gap-2 text-secondary font-title-md text-title-md font-bold">
-<span class="material-symbols-outlined text-[20px]">format_image_left</span>
-<span>Jaminan Privasi Penuh</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-            Homas berjalan secara mandiri di smartphone. Tidak ada analitik pihak ketiga atau pelacakan pergerakan stok rumah tangga Anda.
-          </p>
-<a class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary font-semibold hover:underline pt-2" href="./privacy-policy.html">
-<span>Pelajari Keamanan &amp; Privasi Homas</span>
-<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
-</a>
-</div>
-</aside>
-<!-- Right Column: Step-by-Step Visual Instruction Stream -->
-<section class="lg:col-span-8 flex flex-col gap-space-lg">
-<!-- Step 1: Download & Install -->
-<article class="rounded-2xl bg-surface-container-lowest p-6 md:p-8 shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md" id="langkah-1">
-<div class="flex items-start justify-between gap-4">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm">
-                1
-              </div>
-<div>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Langkah Pertama</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Unduh &amp; Pasang Homas</h3>
-</div>
-</div>
-<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[14px] text-secondary">android</span> Android 8.0+
-            </span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-            Dapatkan aplikasi resmi dari Google Play Store resmi untuk memastikan Anda menerima pembaruan berkala dan performa engine lokal yang stabil tanpa manipulasi pihak luar.
-          </p>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-<div class="rounded-xl bg-surface-container-low p-4 flex flex-col gap-space-xs">
-<div class="flex items-center gap-2 text-on-surface font-title-md text-title-md font-semibold">
-<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
-<span>Sumber Resmi Google Play</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-                Hindari mengunduh file APK dari situs tak terpercaya agar basis data enkripsi lokal Anda tetap terlindungi.
-              </p>
-<div class="pt-2">
-<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-on-secondary font-title-md text-title-md hover:bg-tertiary transition-colors shadow-sm" href="https://play.google.com" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">download</span>
-<span>Buka di Google Play</span>
-</a>
-</div>
-</div>
-<!-- Visual Mockup Card -->
-<div class="rounded-xl bg-surface-container p-4 flex flex-col justify-between">
-<div class="flex items-center justify-between pb-3">
-<div class="flex items-center gap-2">
-<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center font-bold text-[14px]">H</div>
-<div>
-<div class="font-title-md text-title-md font-semibold leading-none">Homas App</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">ID: com.karsa.homas</div>
-</div>
-</div>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-lowest text-secondary font-semibold">GRATIS</span>
-</div>
-<div class="flex items-center gap-3 pt-2 font-label-md text-label-md text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">storage</span> 18.4 MB</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">lock</span> 100% Offline</span>
-</div>
-</div>
-</div>
-</article>
-<!-- Step 2: Google Drive Backup & Auth -->
-<article class="rounded-2xl bg-surface-container-lowest p-6 md:p-8 shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md" id="langkah-2">
-<div class="flex items-start justify-between gap-4">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm">
-                2
-              </div>
-<div>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Pencadangan Mandiri</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Hubungkan Akun Google untuk Ekspor &amp; Cadangan</h3>
-</div>
-</div>
-<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
-<span class="material-symbols-outlined text-[14px]">cloud_sync</span> Rekomendasi
-            </span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            Masuk ke menu <span class="font-semibold text-on-surface">Pengaturan &gt; Sinkronisasi Cloud</span>. Pilih <span class="font-semibold text-on-surface">'Hubungkan Google Drive'</span>. Berikan izin penyimpanan file spreadsheet/cadangan ke folder pribadi Anda. Homas tidak pernah membaca file lain di Drive Anda.
-          </p>
-<!-- Flow Stepper Component -->
-<div class="rounded-xl bg-surface-container-low p-5 flex flex-col gap-space-sm">
-<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-primary">Prosedur Penghubungan Cloud</span>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-<div class="rounded-xl bg-surface-container-lowest p-3.5 flex flex-col gap-1 shadow-sm">
-<div class="flex items-center justify-between text-secondary">
-<span class="font-label-sm text-label-sm font-bold">FASE 1</span>
-<span class="material-symbols-outlined text-[18px]">settings</span>
-</div>
-<div class="font-title-md text-title-md font-semibold text-on-surface">Buka Pengaturan</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Pilih menu tab pojok kanan bawah lalu klik Cloud Storage.</p>
-</div>
-<div class="rounded-xl bg-surface-container-lowest p-3.5 flex flex-col gap-1 shadow-sm">
-<div class="flex items-center justify-between text-primary">
-<span class="font-label-sm text-label-sm font-bold">FASE 2</span>
-<span class="material-symbols-outlined text-[18px]">add_to_drive</span>
-</div>
-<div class="font-title-md text-title-md font-semibold text-on-surface">Pilih Google Drive</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Gunakan akun Gmail aktif Anda lewat prompt login Google.</p>
-</div>
-<div class="rounded-xl bg-surface-container-lowest p-3.5 flex flex-col gap-1 shadow-sm">
-<div class="flex items-center justify-between text-secondary">
-<span class="font-label-sm text-label-sm font-bold">FASE 3</span>
-<span class="material-symbols-outlined text-[18px]">folder_special</span>
-</div>
-<div class="font-title-md text-title-md font-semibold text-on-surface">Folder Khusus</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Folder <code>/Homas-Backup/</code> dibuat otomatis di Drive Anda.</p>
-</div>
-</div>
-</div>
-<!-- Highlight Callout Box -->
-<div class="rounded-xl bg-surface-container p-4.5 flex items-start gap-space-sm">
-<span class="material-symbols-outlined text-primary text-[24px] shrink-0 mt-0.5">lock_clock</span>
-<div class="flex flex-col gap-1 text-on-surface">
-<div class="font-title-md text-title-md font-bold">Izin Terbatas (Restricted Scope)</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-                Otorisasi OAuth Homas hanya meminta hak akses <code class="bg-surface-container-lowest px-1.5 py-0.5 rounded text-on-surface font-label-sm text-label-sm">drive.file</code>. Artinya, aplikasi <strong>TIDAK BISA</strong> membaca foto, dokumen kerja, atau spreadsheet lain yang sudah ada di akun Google Drive Anda.
-              </p>
-</div>
-</div>
-</article>
-<!-- Step 3: Room Categorization & Inventory -->
-<article class="rounded-2xl bg-surface-container-lowest p-6 md:p-8 shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md" id="langkah-3">
-<div class="flex items-start justify-between gap-4">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm">
-                3
-              </div>
-<div>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Organisasi Spasial</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Mulai Kelompokkan per Kamar &amp; Lokasi</h3>
-</div>
-</div>
-<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[14px]">meeting_room</span> 4 Preset Standar
-            </span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            Buat kategori ruangan pertama Anda (Dapur, Kamar Utama, Kamar Mandi, Gudang) lalu masukkan barang dengan estimasi pemakaian agar stok minimum dapat terpantau.
-          </p>
-<!-- Interactive Room Category Showcase -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
-<div class="rounded-xl bg-surface-container-low p-4 flex flex-col gap-2">
-<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
-<span class="material-symbols-outlined text-[20px]">countertops</span>
-</div>
-<div>
-<div class="font-title-md text-title-md font-bold text-on-surface">Dapur</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Beras, minyak, bumbu &amp; gas</div>
-</div>
-</div>
-<div class="rounded-xl bg-surface-container-low p-4 flex flex-col gap-2">
-<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
-<span class="material-symbols-outlined text-[20px]">bed</span>
-</div>
-<div>
-<div class="font-title-md text-title-md font-bold text-on-surface">Kamar Utama</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Linen, obat rutin &amp; elektronik</div>
-</div>
-</div>
-<div class="rounded-xl bg-surface-container-low p-4 flex flex-col gap-2">
-<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
-<span class="material-symbols-outlined text-[20px]">bathtub</span>
-</div>
-<div>
-<div class="font-title-md text-title-md font-bold text-on-surface">Kamar Mandi</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Sabun, deterjen &amp; refill</div>
-</div>
-</div>
-<div class="rounded-xl bg-surface-container-low p-4 flex flex-col gap-2">
-<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
-<span class="material-symbols-outlined text-[20px]">inventory</span>
-</div>
-<div>
-<div class="font-title-md text-title-md font-bold text-on-surface">Gudang</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Perkakas, baterai cadangan</div>
-</div>
-</div>
-</div>
-<!-- Feature Checklist -->
-<div class="rounded-xl bg-surface-container-low p-4.5 flex flex-col gap-space-xs">
-<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-secondary">Checklist Penginputan Barang Pertama</span>
-<div class="space-y-2 pt-1 font-body-sm text-body-sm text-on-surface">
-<div class="flex items-center gap-2.5">
-<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
-<span>Buka tombol floating (+) di pojok kanan bawah beranda aplikasi.</span>
-</div>
-<div class="flex items-center gap-2.5">
-<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
-<span>Tulis nama barang, pilih ruangan, dan tetapkan jumlah stok awal.</span>
-</div>
-<div class="flex items-center gap-2.5">
-<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
-<span>Aktifkan toggle <em>"Peringatan Stok Rendah"</em> jika barang sering dibeli ulang.</span>
-</div>
-</div>
-</div>
-</article>
-<!-- Step 4: Recurring Bills & Expense Monitoring -->
-<article class="rounded-2xl bg-surface-container-lowest p-6 md:p-8 shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md" id="langkah-4">
-<div class="flex items-start justify-between gap-4">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm">
-                4
-              </div>
-<div>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Keuangan Rumah</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Atur Tagihan Berulang</h3>
-</div>
-</div>
-<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[14px]">notifications_active</span> Auto Alarm
-            </span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            Input tagihan listrik, internet, atau kontrakan agar mendapat notifikasi 3 hari sebelum jatuh tempo secara otomatis tanpa perlu koneksi internet menyala.
-          </p>
-<!-- Mock Bills Visual Card -->
-<div class="rounded-xl bg-surface-container-low p-4 flex flex-col gap-3">
-<div class="flex items-center justify-between pb-1">
-<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-primary">Simulasi Tampilan Jadwal Tagihan</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Bulan Ini</span>
-</div>
-<div class="space-y-2">
-<div class="rounded-lg bg-surface-container-lowest p-3 flex items-center justify-between shadow-sm">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">bolt</span>
-</div>
-<div>
-<div class="font-title-md text-title-md font-semibold text-on-surface">PLN Pascabayar</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">Jatuh tempo tgl 20 • Notifikasi Aktif</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-label-md text-label-md font-bold text-on-surface">Rp 350.000</div>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-secondary font-semibold">T-3 Hari</span>
-</div>
-</div>
-<div class="rounded-lg bg-surface-container-lowest p-3 flex items-center justify-between shadow-sm">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">wifi</span>
-</div>
-<div>
-<div class="font-title-md text-title-md font-semibold text-on-surface">Wifi Rumah Fiber</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">Jatuh tempo tgl 25 • Notifikasi Aktif</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-label-md text-label-md font-bold text-on-surface">Rp 280.000</div>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-secondary font-semibold">T-3 Hari</span>
-</div>
-</div>
-</div>
-</div>
-</article>
-<!-- FAQ Section -->
-<article class="rounded-2xl bg-surface-container-lowest p-6 md:p-8 shadow-sm flex flex-col gap-space-md" id="faq">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined text-[20px]">help_outline</span>
-</div>
-<div>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Informasi Lanjutan</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Pertanyaan Umum (FAQ)</h3>
-</div>
-</div>
-<div class="space-y-3">
-<details class="group rounded-xl bg-surface-container-low p-4 cursor-pointer transition-all">
-<summary class="flex items-center justify-between font-title-md text-title-md font-semibold text-on-surface list-none">
-<span>Apakah data saya hilang jika ganti HP baru?</span>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform group-open:rotate-180">expand_more</span>
-</summary>
-<p class="font-body-md text-body-md text-on-surface-variant pt-3 leading-relaxed">
-                Tidak, asalkan Anda sudah menghubungkan Google Drive pada HP lama dan menekan tombol "Cadangkan Sekarang". Di HP baru, cukup unduh Homas, login dengan akun Google yang sama, lalu tekan tombol "Pulihkan dari Drive".
-              </p>
-</details>
-<details class="group rounded-xl bg-surface-container-low p-4 cursor-pointer transition-all">
-<summary class="flex items-center justify-between font-title-md text-title-md font-semibold text-on-surface list-none">
-<span>Bisa digunakan tanpa akun Google sama sekali?</span>
-<span class="material-symbols-outlined text-on-surface-variant transition-transform group-open:rotate-180">expand_more</span>
-</summary>
-<p class="font-body-md text-body-md text-on-surface-variant pt-3 leading-relaxed">
-                Sangat bisa! Homas dirancang offline-first. Anda dapat menggunakan seluruh fitur inventaris tanpa koneksi internet dan tanpa akun apa pun. Cadangan database juga dapat diekspor secara manual berupa file JSON/ZIP ke kartu SD Anda.
-              </p>
-</details>
-</div>
-</article>
-<!-- Help & Support Callout Card -->
-<div class="rounded-2xl bg-surface-container-high/60 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-sm">
-<div class="flex flex-col gap-space-xs text-center md:text-left">
-<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Butuh Bantuan Lebih Lanjut?</h4>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
-              Pelajari arsitektur privasi kami atau tanyakan kendala penggunaan langsung kepada tim pengembang.
-            </p>
-</div>
-<div class="flex flex-wrap items-center justify-center gap-space-sm shrink-0">
-<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container font-title-md text-title-md transition-all shadow-sm" href="./privacy-policy.html">
-<span class="material-symbols-outlined text-[18px]">lock</span>
-<span>Kebijakan Privasi</span>
-</a>
-<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary text-on-secondary hover:bg-tertiary font-title-md text-title-md transition-all shadow-sm" href="mailto:support@karsa.dev">
-<span class="material-symbols-outlined text-[18px]">mail</span>
-<span>Hubungi Developer</span>
-</a>
 </div>
 </div>
 </section>
+<!-- CONTENT STREAM CONTAINER -->
+<div class="max-w-5xl mx-auto px-6 lg:px-8 py-16 flex flex-col gap-16">
+<!-- BAGIAN 1: INSTALASI & SETUP TANPA AKUN -->
+<section class="scroll-mt-28 rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-sm flex flex-col gap-6" id="langkah-1">
+<div class="flex items-start justify-between gap-4 flex-wrap">
+<div class="flex items-center gap-3.5">
+<span class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-mono font-extrabold text-xl flex items-center justify-center shadow-md shadow-emerald-600/30 shrink-0">
+              01
+            </span>
+<div>
+<span class="text-xs font-mono uppercase tracking-wider text-emerald-700 font-bold">Inisialisasi Cepat</span>
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Instalasi &amp; Setup Tanpa Akun (0 Byte ke Cloud)</h2>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-mono font-semibold">
+            Instan • Tanpa Password
+          </span>
+</div>
+<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Homas tidak memerlukan pendaftaran akun, verifikasi email, maupun nomor telepon. Begitu aplikasi dibuka untuk pertama kali, mesin database <strong>SQLite lokal</strong> langsung aktif di memori internal ponsel Anda tanpa pengiriman data ke server eksternal mana pun.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-2">
+<div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</div>
+<h4 class="font-bold text-slate-900 text-sm">1. Unduh di Play Store</h4>
+<p class="text-xs text-slate-500 leading-relaxed">
+              Pasang aplikasi resmi berukuran ringan (~18.4 MB) langsung dari Google Play Store resmi.
+            </p>
+</div>
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-2">
+<div class="w-9 h-9 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">flash_on</span>
+</div>
+<h4 class="font-bold text-slate-900 text-sm">2. Langsung Masuk Beranda</h4>
+<p class="text-xs text-slate-500 leading-relaxed">
+              Lewati formulir registrasi yang berbelit. Homas langsung membuka Beranda Cerdas siap pakai.
+            </p>
+</div>
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-2">
+<div class="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<h4 class="font-bold text-slate-900 text-sm">3. Kedaulatan Data</h4>
+<p class="text-xs text-slate-500 leading-relaxed">
+              100% data barang belanjaan Anda terkunci aman secara lokal di ruang penyimpanan pribadi smartphone.
+            </p>
+</div>
+</div>
+<div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-700 text-[22px] shrink-0 mt-0.5">verified_user</span>
+<div class="text-xs text-slate-700 leading-relaxed">
+<strong class="text-slate-900">Privasi Standar Tertinggi:</strong> Homas tidak mengumpulkan log aktivitas, tidak menyematkan analitik pelacakan iklan invasif, dan sepenuhnya patuh pada regulasi GDPR lokalitas data.
+          </div>
+</div>
+</section>
+<!-- BAGIAN 2: INPUT 3 LANGKAH & 616 MASTER -->
+<section class="scroll-mt-28 rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-sm flex flex-col gap-6" id="langkah-2">
+<div class="flex items-start justify-between gap-4 flex-wrap">
+<div class="flex items-center gap-3.5">
+<span class="w-12 h-12 rounded-2xl bg-teal-600 text-white font-mono font-extrabold text-xl flex items-center justify-center shadow-md shadow-teal-600/30 shrink-0">
+              02
+            </span>
+<div>
+<span class="text-xs font-mono uppercase tracking-wider text-teal-700 font-bold">Ergonomi Tanpa Beban</span>
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Alur Input 3 Langkah (Satu Keputusan Per Layar)</h2>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-teal-50 text-teal-800 border border-teal-200 text-xs font-mono font-semibold">
+            FAB (+) • &lt; 30 Detik
+          </span>
+</div>
+<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Mencatat inventaris tidak boleh melelahkan. Tombol melayang <strong>FAB (+)</strong> di pojok kanan bawah memandu Anda dengan prinsip <em>One Decision Per Screen</em>.
+        </p>
+<!-- Stepper Visual Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-lg bg-teal-100 text-teal-800 font-mono text-xs font-bold">Layar 1</span>
+<span class="material-symbols-outlined text-teal-600 text-[20px]">category</span>
+</div>
+<h4 class="font-bold text-slate-900 text-base">Pilih Jenis dari 616 Master</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Cari nama barang atau gunakan pemindai barcode kamera. Satuan baku (gram, ml, pcs) dan netto terisi otomatis tanpa perlu mengetik ulang.
+            </p>
+<div class="mt-auto pt-2 text-[11px] font-mono text-teal-700 font-medium">
+              19 Kategori bawaan siap pakai
+            </div>
+</div>
+<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-lg bg-teal-100 text-teal-800 font-mono text-xs font-bold">Layar 2</span>
+<span class="material-symbols-outlined text-teal-600 text-[20px]">meeting_room</span>
+</div>
+<h4 class="font-bold text-slate-900 text-base">Tentukan Ruang &amp; Tempat</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Pilih Ruangan lalu tentukan wadah spesifik (misal: <em>Dapur Utama &gt; Lemari Bawah Rak 2</em>). Pasang label kepemilikan bila diperlukan.
+            </p>
+<div class="mt-auto pt-2 text-[11px] font-mono text-teal-700 font-medium">
+              Struktur presisi multi-level
+            </div>
+</div>
+<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-lg bg-teal-100 text-teal-800 font-mono text-xs font-bold">Layar 3</span>
+<span class="material-symbols-outlined text-teal-600 text-[20px]">tune</span>
+</div>
+<h4 class="font-bold text-slate-900 text-base">Atur Takaran / Durasi</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Tentukan porsi pakai harian atau masa kedaluwarsa PAO. Masukkan jumlah stok cadangan di lemari, lalu simpan.
+            </p>
+<div class="mt-auto pt-2 text-[11px] font-mono text-teal-700 font-medium">
+              Estimasi hari langsung aktif
+            </div>
+</div>
+</div>
+<!-- 19 Kategori Preview -->
+<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-3">
+<div class="flex items-center justify-between text-xs font-mono">
+<span class="font-bold uppercase tracking-wider text-slate-700">Contoh Master Barang Bawaan</span>
+<span class="text-emerald-700 font-semibold">Total 616 Master Data</span>
+</div>
+<div class="flex flex-wrap gap-2 text-xs">
+<span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium">Beras Ramos / Pandan Wangi (5kg)</span>
+<span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium">Minyak Goreng Pouch (2000 ml)</span>
+<span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium">Deterjen Konsentrat (800 ml)</span>
+<span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium">Gas Elpiji (3kg / 12kg)</span>
+<span class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium">Air Galon Aqua (19 Liter)</span>
+<span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-bold">+ 611 Varian Lainnya</span>
+</div>
+</div>
+</section>
+<!-- BAGIAN 3: TAKARAN & RUMUS PREDIKSI -->
+<section class="scroll-mt-28 rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-sm flex flex-col gap-6" id="langkah-3">
+<div class="flex items-start justify-between gap-4 flex-wrap">
+<div class="flex items-center gap-3.5">
+<span class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-mono font-extrabold text-xl flex items-center justify-center shadow-md shadow-emerald-600/30 shrink-0">
+              03
+            </span>
+<div>
+<span class="text-xs font-mono uppercase tracking-wider text-emerald-700 font-bold">Kecerdasan Deterministik</span>
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Sains &amp; Rumus Prediksi Riil (Bukan Tebakan)</h2>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-mono font-semibold">
+            Self-Calibrating Algorithm
+          </span>
+</div>
+<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Homas tidak menggunakan tebakan acak. Sistem menerapkan kalkulasi matematis presisi yang membedakan barang habis terpakai (dapur/toilet) dan barang berbasis durasi kedaluwarsa.
+        </p>
+<!-- 3 Formula Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Card 1: Mode Takaran -->
+<div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-3">
+<span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-mono text-xs font-bold w-fit">Mode Takaran</span>
+<h4 class="font-bold text-slate-900 text-base">Bahan Dapur &amp; Konsumsi</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Menghitung umur barang berdasarkan massa netto kemasan dan dosis pakai harian keluarga.
+              </p>
+<!-- Kartu Formula Visual -->
+<div class="p-3.5 rounded-xl bg-slate-900 text-white font-mono text-center shadow-inner">
+<span class="text-[10px] text-emerald-400 uppercase tracking-widest block mb-0.5">Rumus Deterministik</span>
+<div class="text-xs sm:text-sm font-bold text-white">
+                  Hari = Netto ÷ (Takaran × Frekuensi × Faktor)
+                </div>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-white border border-slate-200 text-[11px] font-mono text-slate-600">
+<strong class="text-slate-900">Contoh Beras 5.000g:</strong><br>
+              5000 ÷ (150g × 2 makan) = <span class="text-emerald-700 font-bold">16,6 Hari Sisa</span>
+</div>
+</div>
+<!-- Card 2: Mode Durasi -->
+<div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-3">
+<span class="px-2.5 py-1 rounded-lg bg-teal-100 text-teal-800 font-mono text-xs font-bold w-fit">Mode Durasi</span>
+<h4 class="font-bold text-slate-900 text-base">PAO, Kosmetik, &amp; Oli</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Untuk barang yang wajib dibuang setelah dibuka (Period After Opening) meskipun isinya belum habis.
+              </p>
+<div class="p-3.5 rounded-xl bg-teal-50 border border-teal-200/80 flex flex-col gap-1.5 font-mono text-xs">
+<div class="flex justify-between text-teal-900">
+<span class="">Dibuka: 01 Mar</span>
+<span class="text-rose-600 font-bold">Batas: 30 Hari</span>
+</div>
+<div class="w-full bg-teal-200 h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-teal-500 to-amber-500 h-2 rounded-full w-[70%]"></div>
+</div>
+<span class="text-[11px] text-teal-700 font-bold">Alert dinamis di 30%, 15%, 0%</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-white border border-slate-200 text-[11px] font-mono text-slate-600">
+              Menghindarkan pemakaian krim wajah teroksidasi atau obat tetes mata kedaluwarsa.
+            </div>
+</div>
+<!-- Card 3: Belajar dari Siklus -->
+<div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-3">
+<span class="px-2.5 py-1 rounded-lg bg-cyan-100 text-cyan-800 font-mono text-xs font-bold w-fit">Adaptasi Dinamis</span>
+<h4 class="font-bold text-slate-900 text-base">Belajar dari Pemakaian Nyata</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Saat barang habis dan Anda menekan tombol konfirmasi, Homas mencatat tanggal riil.
+              </p>
+<div class="p-3.5 rounded-xl bg-cyan-50 border border-cyan-200 flex flex-col gap-1 font-mono text-xs text-cyan-900">
+<div class="flex items-end gap-1.5 h-12 pt-1">
+<div class="flex-1 bg-cyan-300 rounded-t h-[60%] flex items-center justify-center text-[9px] font-bold">S-1 Est</div>
+<div class="flex-1 bg-cyan-400 rounded-t h-[80%] flex items-center justify-center text-[9px] font-bold">S-1 Riil</div>
+<div class="flex-1 bg-cyan-600 rounded-t h-[95%] flex items-center justify-center text-[9px] font-bold text-white">S-2 Pas</div>
 </div>
 </div>
 </div>
-<script>
-  // Simple scrollspy micro-interaction for sidebar links
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('#tutorial-nav a');
-    const sections = Array.from(navLinks).map(link => {
-      const targetId = link.getAttribute('href').replace('#', '');
-      return document.getElementById(targetId);
-    }).filter(Boolean);
+<div class="p-3 rounded-xl bg-white border border-slate-200 text-[11px] font-mono text-slate-600">
+              Siklus berikutnya otomatis merevisi deviasi takaran sesuai pola konsumsi riil.
+            </div>
+</div>
+</div>
+</section>
+<!-- BAGIAN 4: INVENTARIS SPASIAL & WADAH -->
+<section class="scroll-mt-28 rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-sm flex flex-col gap-6" id="langkah-4">
+<div class="flex items-start justify-between gap-4 flex-wrap">
+<div class="flex items-center gap-3.5">
+<span class="w-12 h-12 rounded-2xl bg-teal-600 text-white font-mono font-extrabold text-xl flex items-center justify-center shadow-md shadow-teal-600/30 shrink-0">
+              04
+            </span>
+<div>
+<span class="text-xs font-mono uppercase tracking-wider text-teal-700 font-bold">Organisasi Fisik</span>
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Manajemen Inventaris Spasial &amp; Wadah</h2>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-teal-50 text-teal-800 border border-teal-200 text-xs font-mono font-semibold">
+            Hierarki Bertingkat
+          </span>
+</div>
+<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Jangan biarkan barang terselip di sudut rumah. Homas mengadopsi struktur pengorganisasian 3 tingkat: <strong>Ruangan &gt; Wadah/Tempat &gt; Barang</strong>, lengkap dengan tag kepemilikan visual.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Tree Structure Mockup -->
+<div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-3 font-mono text-xs">
+<span class="text-slate-500 uppercase tracking-wider font-bold">Peta Spasial Rumah</span>
+<div class="space-y-2 text-slate-800 pt-1">
+<div class="p-2.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+<span class="font-bold text-emerald-800">🏠 Dapur Utama</span>
+<div class="pl-4 pt-1.5 text-slate-600 space-y-1">
+<div class="">├─ 🗄️ Lemari Atas Rak 1 (Bumbu &amp; Saus)</div>
+<div class="">├─ ❄️ Kulkas - Laci Sayur Bawah</div>
+<div class="">└─ 📦 Keranjang Sembako Bawah Meja</div>
+</div>
+</div>
+<div class="p-2.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+<span class="font-bold text-teal-800">🛁 Kamar Mandi Belakang</span>
+<div class="pl-4 pt-1.5 text-slate-600 space-y-1">
+<div class="">├─ 🧴 Rak Dinding Sudut (Sampo Aktif)</div>
+<div class="">└─ 🗃️ Box Plastik Cadangan (Sabun Refill × 2)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Label Penanda Kepemilikan -->
+<div class="flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-2.5">
+<h4 class="font-bold text-slate-900 text-base">4 Penanda Label Cepat</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Tandai status kepemilikan dan peruntukan barang agar tidak terjadi kesalahpahaman antar penghuni rumah:
+              </p>
+<div class="grid grid-cols-2 gap-2 text-xs pt-1">
+<div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+<span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[10px]">PRIBADI</span>
+<p class="text-[11px] text-slate-600 mt-1">Kosmetik atau obat khusus milik individu.</p>
+</div>
+<div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">KELUARGA</span>
+<p class="text-[11px] text-slate-600 mt-1">Sembako, sabun cuci piring, bumbu dapur.</p>
+</div>
+<div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+<span class="px-2 py-0.5 rounded bg-purple-100 text-purple-800 font-bold text-[10px]">CADANGAN</span>
+<p class="text-[11px] text-slate-600 mt-1">Stok pengaman di gudang / lemari.</p>
+</div>
+<div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+<span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold text-[10px]">TITIPAN</span>
+<p class="text-[11px] text-slate-600 mt-1">Aset atau kiriman titipan kerabat.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BAGIAN 5: PENANGANAN PERINGATAN CEPAT (QUICK ACTION 1 KETUKAN) -->
+<section class="scroll-mt-28 rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-sm flex flex-col gap-6" id="langkah-5">
+<div class="flex items-start justify-between gap-4 flex-wrap">
+<div class="flex items-center gap-3.5">
+<span class="w-12 h-12 rounded-2xl bg-cyan-600 text-white font-mono font-extrabold text-xl flex items-center justify-center shadow-md shadow-cyan-600/30 shrink-0">
+              05
+            </span>
+<div>
+<span class="text-xs font-mono uppercase tracking-wider text-cyan-700 font-bold">Respon Taktis</span>
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Penanganan Peringatan Cepat (Quick Action 1 Ketukan)</h2>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 text-xs font-mono font-semibold">
+            Zero Friction
+          </span>
+</div>
+<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Saat barang mendekati tanggal kritis, kartu peringatan muncul di Beranda Cerdas. Anda cukup melakukan satu ketukan tanpa harus membuka form edit panjang.
+        </p>
+<!-- 4 Quick Actions Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">inventory</span>
+<span class="">Buka Cadangan</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Jika ada stok cadangan di lemari, stok cadangan berkurang 1 dan tanggal habis disetel ulang otomatis.
+            </p>
+</div>
+<div class="p-5 rounded-2xl bg-teal-50/70 border border-teal-200 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-teal-800 font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+<span class="">Beli Ulang</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Barang langsung diteruskan ke <strong>Keranjang Belanja Pintar</strong> untuk dibeli saat kunjungan supermarket berikutnya.
+            </p>
+</div>
+<div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-amber-800 font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">update</span>
+<span class="">Masih Ada (+Hari)</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Perpanjang estimasi jika pemakaian lebih hemat dari takaran biasa tanpa merusak rumus kalkulasi induk.
+            </p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-100 border border-slate-200 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-slate-800 font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">pause_circle</span>
+<span class="">Dihentikan</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Arsipkan barang ke Audit Siklus jika Anda memutuskan untuk tidak membeli kembali jenis barang ini.
+            </p>
+</div>
+</div>
+<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs font-mono text-slate-600 flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500 text-[20px] shrink-0">history_toggle_off</span>
+<span class=""><strong>Otomatisasi 24 Jam:</strong> Barang yang diabaikan melewati batas kritis akan ditutup secara aman ke log audit riwayat pemakaian.</span>
+</div>
+</section>
+<!-- BAGIAN 6: TAGIHAN RUTIN & KALKULATOR TOKEN PLN -->
+<section class="scroll-mt-28 rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-sm flex flex-col gap-6" id="langkah-6">
+<div class="flex items-start justify-between gap-4 flex-wrap">
+<div class="flex items-center gap-3.5">
+<span class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-mono font-extrabold text-xl flex items-center justify-center shadow-md shadow-emerald-600/30 shrink-0">
+              06
+            </span>
+<div>
+<span class="text-xs font-mono uppercase tracking-wider text-emerald-700 font-bold">Utilita &amp; Energi</span>
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Tagihan Rutin &amp; Kalkulator Token Listrik PLN</h2>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-mono font-semibold">
+            Bebas Denda Keterlambatan
+          </span>
+</div>
+<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Pantau kewajiban bulanan rumah tangga seperti Wi-Fi, retribusi keamanan, IPL, dan token listrik prabayar PLN secara deterministik.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+<!-- Token Listrik Visual Box -->
+<div class="p-6 rounded-2xl bg-cyan-50/70 border border-cyan-200 flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-mono uppercase tracking-wider font-bold text-cyan-800">Kalkulator Token PLN</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-200 text-cyan-900">Tarif Resmi</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Masukkan nominal pembelian token (misal: Rp 200.000) dan daya rumah (900 VA, 1300 VA, 2200 VA). Homas menghitung kWh bersih setelah PPJ dan memprediksi tanggal habis meteran.
+              </p>
+<div class="p-4 rounded-xl bg-white border border-cyan-200 shadow-2xs font-mono text-xs space-y-1.5">
+<div class="flex justify-between text-slate-700">
+<span class="">Daya Rumah:</span>
+<span class="font-bold">1300 VA (R1)</span>
+</div>
+<div class="flex justify-between text-slate-700">
+<span class="">Tarif Dasar:</span>
+<span class="">Rp 1.444,70 / kWh</span>
+</div>
+<div class="flex justify-between text-cyan-900 font-bold border-t border-slate-100 pt-1">
+<span class="">Estimasi Habis:</span>
+<span class="">24 Mei (~7 Hari Sisa)</span>
+</div>
+</div>
+</div>
+<div class="text-[11px] font-mono text-cyan-800">
+              ✓ Peringatan dini sebelum meteran berbunyi tengah malam
+            </div>
+</div>
+<!-- Tagihan Rutin Bulanan Box -->
+<div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-mono uppercase tracking-wider font-bold text-slate-700">Jadwal Tagihan Rutin</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">Auto Alarm T-3</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Atur jadwal tempo bulanan atau tahunan. Notifikasi lokal otomatis menyala 3 hari sebelum jatuh tempo tanpa butuh koneksi internet aktif.
+              </p>
+<div class="space-y-2">
+<div class="p-3 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">wifi</span>
+<span class="font-semibold text-slate-900">Wi-Fi Indihome</span>
+</div>
+<span class="font-mono text-slate-600">Tgl 20 • Rp 385.000</span>
+</div>
+<div class="p-3 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-600 text-[18px]">water_drop</span>
+<span class="font-semibold text-slate-900">PDAM Air</span>
+</div>
+<span class="font-mono text-slate-600">Tgl 15 • Rp 120.000</span>
+</div>
+</div>
+</div>
+<div class="text-[11px] font-mono text-emerald-700">
+              ✓ Histori pembayaran terekam dalam laporan keuangan domestik
+            </div>
+</div>
+</div>
+</section>
+<!-- BAGIAN 7: PEMINJAMAN BARANG & KEUANGAN DOMESTIK -->
+<section class="scroll-mt-28 rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-sm flex flex-col gap-6" id="langkah-7">
+<div class="flex items-start justify-between gap-4 flex-wrap">
+<div class="flex items-center gap-3.5">
+<span class="w-12 h-12 rounded-2xl bg-teal-600 text-white font-mono font-extrabold text-xl flex items-center justify-center shadow-md shadow-teal-600/30 shrink-0">
+              07
+            </span>
+<div>
+<span class="text-xs font-mono uppercase tracking-wider text-teal-700 font-bold">Keseimbangan Anggaran</span>
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Pinjaman Aset &amp; Analisis Keuangan Domestik</h2>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-teal-50 text-teal-800 border border-teal-200 text-xs font-mono font-semibold">
+            Audit Trail
+          </span>
+</div>
+<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Ketahui persis ke mana uang mengalir dan lindungi perkakas mahal rumah tangga Anda dari kehilangan akibat lupa siapa yang meminjam.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Modul Pinjaman Aset -->
+<div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-3">
+<div class="flex items-center gap-2 text-slate-900 font-bold text-base">
+<span class="material-symbols-outlined text-amber-600 text-[22px]">handshake</span>
+<span class="">Pencatatan Pinjaman Barang</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Catat nama peminjam (tetangga/teman), tanggal pinjam, dan perkiraan tanggal kembali untuk perkakas seperti bor listrik, tangga lipat, atau kompresor.
+            </p>
+<div class="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-xs mt-2">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 font-bold text-xs flex items-center justify-center font-mono">
+                  BP
+                </div>
+<div>
+<div class="font-bold text-slate-900">Bambang — Bor Bosch GSB 550</div>
+<div class="text-[11px] text-rose-600 font-mono">Tenggat: Kemarin</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 font-mono">Dipinjam</span>
+</div>
+</div>
+<!-- Modul Fixed vs Variable -->
+<div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col gap-3">
+<div class="flex items-center gap-2 text-slate-900 font-bold text-base">
+<span class="material-symbols-outlined text-emerald-600 text-[22px]">query_stats</span>
+<span class="">Fixed vs Variable &amp; Uang Terselamatkan</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Pantau perbandingan belanja rutin wajib (Fixed) dan belanja fluktuatif (Variable). Hitung rupiah yang berhasil diselamatkan dari belanja dobel.
+            </p>
+<div class="grid grid-cols-2 gap-2 text-center mt-2">
+<div class="p-3 rounded-xl bg-white border border-slate-200 shadow-2xs font-mono">
+<span class="block text-[10px] uppercase text-slate-400">Fixed / Variable</span>
+<span class="text-xs font-bold text-slate-800">Rp 1,8M / Rp 940k</span>
+</div>
+<div class="p-3 rounded-xl bg-white border border-slate-200 shadow-2xs font-mono">
+<span class="block text-[10px] uppercase text-slate-400">Diselamatkan</span>
+<span class="text-xs font-bold text-emerald-600">+Rp 450.000</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BAGIAN 8: CADANGAN MANDIRI & FAQ -->
+<section class="scroll-mt-28 rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-sm flex flex-col gap-6" id="langkah-8">
+<div class="flex items-start justify-between gap-4 flex-wrap">
+<div class="flex items-center gap-3.5">
+<span class="w-12 h-12 rounded-2xl bg-cyan-600 text-white font-mono font-extrabold text-xl flex items-center justify-center shadow-md shadow-cyan-600/30 shrink-0">
+              08
+            </span>
+<div>
+<span class="text-xs font-mono uppercase tracking-wider text-cyan-700 font-bold">Kedaulatan &amp; Bantuan</span>
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Ekspor Bebas, Cadangan Mandiri, &amp; FAQ</h2>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 text-xs font-mono font-semibold">
+            JSON &amp; CSV Ready
+          </span>
+</div>
+<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Data Anda adalah milik Anda sepenuhnya. Ekspor seluruh riwayat inventaris kapan pun dalam format standar terbuka atau hubungkan dengan Google Drive pribadi Anda secara langsung.
+        </p>
+<!-- Ekspor Box -->
+<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-white border border-slate-200 text-emerald-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">cloud_sync</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 text-sm">Pencadangan Google Drive Pribadi (Opsional)</h4>
+<p class="text-xs text-slate-500">Izin terbatas drive.file — Homas tidak membaca dokumen lain di Drive Anda.</p>
+</div>
+</div>
+<span class="px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 font-mono text-xs font-bold border border-emerald-200 shrink-0">
+            Folder /Homas-Backup/
+          </span>
+</div>
+<!-- FAQ Accordion -->
+<div class="space-y-3 pt-2">
+<h4 class="font-bold text-slate-900 text-base">Pertanyaan Umum (FAQ)</h4>
+<details class="group rounded-2xl bg-slate-50 border border-slate-200 p-4 cursor-pointer transition-all">
+<summary class="flex items-center justify-between font-bold text-slate-900 text-sm list-none">
+<span class="">Apakah data inventaris saya hilang jika berganti smartphone?</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-xs sm:text-sm text-slate-600 pt-3 leading-relaxed border-t border-slate-200/60 mt-3">
+              Tidak, jika Anda telah melakukan ekspor berkas cadangan ke memori kartu SD atau menghubungkan Google Drive pribadi lewat menu Pengaturan. Pada ponsel baru, cukup unduh Homas lalu tekan tombol <em>"Pulihkan dari Cadangan"</em>.
+            </p>
+</details>
+<details class="group rounded-2xl bg-slate-50 border border-slate-200 p-4 cursor-pointer transition-all">
+<summary class="flex items-center justify-between font-bold text-slate-900 text-sm list-none">
+<span class="">Apakah Homas tetap berfungsi saat tidak ada sinyal internet sama sekali?</span>
+<summary class="hidden"></summary>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-xs sm:text-sm text-slate-600 pt-3 leading-relaxed border-t border-slate-200/60 mt-3">
+              100% berfungsi! Seluruh fungsi perhitungan matematika, pemindaian barcode lokal, pengingat stok, dan pencatatan belanja berjalan mandiri di mesin ponsel Anda tanpa memerlukan kuota data seluler.
+            </p>
+</details>
+<details class="group rounded-2xl bg-slate-50 border border-slate-200 p-4 cursor-pointer transition-all">
+<summary class="flex items-center justify-between font-bold text-slate-900 text-sm list-none">
+<span class="">Bagaimana cara menghapus seluruh data saya secara permanen?</span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-xs sm:text-sm text-slate-600 pt-3 leading-relaxed border-t border-slate-200/60 mt-3">
+              Buka <em>Pengaturan &gt; Manajemen Data &gt; Hapus Semua Database</em>. Tindakan ini menghapus file database SQLite secara instan dari perangkat Anda tanpa ada salinan yang tertinggal di server eksternal.
+            </p>
+</details>
+</div>
+</section>
+<!-- CALL TO ACTION BANNER (Identik dengan Landing Page) -->
+<section class="scroll-mt-28 rounded-3xl bg-gradient-to-b from-white to-emerald-50/40 border border-emerald-200/80 shadow-xl p-8 sm:p-12 flex flex-col items-center text-center gap-7" id="download">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center shadow-lg shadow-emerald-500/25">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex flex-col gap-3">
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Siap Mengoptimalkan Pengelolaan Rumah Anda?
+          </h2>
+<p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            Gunakan Homas sekarang untuk menghentikan pemborosan stok dan rasakan ketenangan hidup dengan logistik rumah tangga yang terukur.
+          </p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="inline-flex items-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm sm:text-base shadow-lg shadow-emerald-600/30 hover:shadow-emerald-600/40 hover:-translate-y-0.5 transition-all" href="https://play.google.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+<path d="M3.609 1.814L13.793 12 3.61 22.186a1.99 1.99 0 0 1-.61-1.436V3.25c0-.555.226-1.059.609-1.436zm11.603 11.604l2.585-2.586a1.994 1.994 0 0 0 0-2.828l-2.585-2.586L12.38 8.25l2.832 5.168zm-2.029-2.036L4.398.995A1.995 1.995 0 0 1 5.438.718c.553 0 1.056.226 1.434.604l6.311 11.06zm0 1.236L6.872 22.678c-.378.378-.881.604-1.434.604a1.995 1.995 0 0 1-1.04-.277l8.785-10.387z"></path>
+</svg>
+<span class="">Unduh di Google Play</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3.5 sm:py-4 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold text-sm sm:text-base shadow-sm hover:border-slate-400 transition-all" href="./privacy-policy.html">
+<span class="material-symbols-outlined text-[20px] text-emerald-600">lock</span>
+<span class="">Kebijakan Privasi</span>
+</a>
+</div>
+</section>
+</div>
+</main>
+<!-- FOOTER (Identik dengan Landing Page Homas) -->
+<footer class="w-full bg-white border-t border-slate-200 py-12 px-6 lg:px-12">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-xs">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-base font-bold text-slate-900">Homas • Smart Home Inventory</span>
+</div>
+<p class="text-xs text-slate-500 max-w-md leading-relaxed">
+          Pengelola inventaris cerdas, estimasi kehabisan stok terukur, dan riwayat anggaran berbasis local-first. Sepenuhnya privat di ponsel Anda.
+        </p>
+<p class="text-[11px] font-mono text-slate-400 pt-1">
+          Dikembangkan secara independen oleh <a class="text-emerald-700 font-semibold hover:underline" href="../../index.html">Karsa Studio</a>. Hak cipta dilindungi.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-6">
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800 transition-colors shadow-2xs" href="https://play.google.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-emerald-600" viewBox="0 0 24 24">
+<path d="M3.609 1.814L13.793 12 3.61 22.186a1.99 1.99 0 0 1-.61-1.436V3.25c0-.555.226-1.059.609-1.436zm11.603 11.604l2.585-2.586a1.994 1.994 0 0 0 0-2.828l-2.585-2.586L12.38 8.25l2.832 5.168zm-2.029-2.036L4.398.995A1.995 1.995 0 0 1 5.438.718c.553 0 1.056.226 1.434.604l6.311 11.06zm0 1.236L6.872 22.678c-.378.378-.881.604-1.434.604a1.995 1.995 0 0 1-1.04-.277l8.785-10.387z"></path>
+</svg>
+<div class="text-left leading-none">
+<span class="block text-[10px] text-slate-500 font-mono">Tersedia di</span>
+<span class="text-xs font-bold text-slate-900">Google Play</span>
+</div>
+</a>
+<div class="flex items-center gap-5 text-xs font-medium text-slate-600">
+<a class="hover:text-emerald-700 transition-colors" href="../../index.html">Beranda Studio</a>
+<a class="text-emerald-700 font-semibold" href="./tutorial.html">Tutorial</a>
+<a class="hover:text-emerald-700 transition-colors" href="./privacy-policy.html">Kebijakan Privasi</a>
+</div>
+</div>
+</div>
+</footer>
 
-    window.addEventListener('scroll', () => {
-      let currentSection = sections[0];
-      const scrollPos = window.scrollY + 200;
 
-      sections.forEach(section => {
-        if (section.offsetTop <= scrollPos) {
-          currentSection = section;
-        }
-      });
-
-      if (currentSection) {
-        navLinks.forEach(link => {
-          if (link.getAttribute('href') === `#${currentSection.id}`) {
-            link.classList.add('bg-surface-container', 'text-on-surface', 'font-semibold');
-            link.classList.remove('text-on-surface-variant');
-          } else {
-            link.classList.remove('bg-surface-container', 'font-semibold');
-            link.classList.add('text-on-surface-variant');
-          }
-        });
-      }
-    }, { passive: true });
-  });
-</script></main><footer class="w-full bg-surface border-t border-surface-container py-12 px-8"><div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col gap-space-xs text-center md:text-left"><div class="flex items-center justify-center md:justify-start gap-space-sm"><div class="w-7 h-7 rounded-lg bg-secondary flex items-center justify-center text-on-secondary"><span class="material-symbols-outlined text-[16px]">inventory_2</span></div><span class="font-title-md text-title-md font-bold text-on-surface">Homas Suite</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Local-first home inventory manager. Tanpa server pihak ketiga, data aset rumah dan inventori 100% milik Anda secara privat.</p></div><div class="flex flex-col sm:flex-row items-center gap-space-md"><a class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-surface-container bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors" href="https://play.google.com" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-secondary text-[22px]">shop</span><div class="text-left leading-none"><div class="font-label-sm text-label-sm text-on-surface-variant">Tersedia di</div><div class="font-title-md text-title-md font-bold">Google Play</div></div></a><div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors" href="../../index.html">Studio</a><a class="hover:text-on-surface transition-colors" href="./tutorial.html">Panduan</a><a class="hover:text-on-surface transition-colors" href="./privacy-policy.html">Kebijakan Privasi</a></div></div></div></footer></div></body></html>
+</body></html>
